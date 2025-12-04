@@ -27,7 +27,6 @@ body {
 
 .plan-features {
   list-style: none;
-  flex-direction: column;
   text-align: center;
 }
 
@@ -40,10 +39,16 @@ body {
   display: block;
   margin: 15px auto 0;
   margin-bottom: 20px;
+  transition: 0.15s;
 }
 
 :hover.plan-button {
   cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.452);
+}
+
+.plan-button:active {
+  background-color: rgba(255, 0, 0, 0.295);
 }
 
 @media (max-width: 1300px) {
