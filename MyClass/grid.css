@@ -1,0 +1,42 @@
+.container {
+  display: grid;
+  height: 890px;
+  width: 610px;
+  gap: 10px;
+  background-color: black;
+  grid-template-columns: 150px 365px 75px;
+  grid-template-rows: 100px 570px 80px 110px;
+  border: 10px black solid;
+}
+
+.white-1 {
+  background-color: white;
+}
+
+.red {
+  background-color: red;
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.white-2 {
+  background-color: white;
+}
+
+.blue {
+  background-color: blue;
+  grid-row: span 2;
+}
+
+.white-3 {
+  background-color: white;
+  grid-row: span 2;
+}
+
+.white-4 {
+  background-color: white;
+}
+
+.yellow {
+  background-color: yellow;
+}
