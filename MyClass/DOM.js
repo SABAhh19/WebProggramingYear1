@@ -14,3 +14,6 @@ for (let i = 0; i < paragraps.length; i++) {
   paragraps[i].style.color = "green";
   paragraps[i].style.margin = "10px";
 }
+const header = document.querySelector("h1");
+document.removeChild("h1");
+header.innerHTML = "shavi";
