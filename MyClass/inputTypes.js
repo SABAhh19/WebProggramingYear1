@@ -10,14 +10,13 @@ document.querySelector("form").addEventListener("submit", function (e) {
   e.preventDefault();
 });
 
-function fetch(userName, password, age, email, male) {
-  let gender;
+function fetch(username, password, age, email, male) {
   if (male) {
     gender = "male";
   } else {
     gender = "female";
   }
   console.log(
-    userName + " " + password + " " + age + " " + email + " " + gender,
+    username + " " + password + " " + age + " " + email + " " + gender,
   );
 }

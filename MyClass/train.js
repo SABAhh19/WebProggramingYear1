@@ -14,12 +14,12 @@
 //   }
 // }
 
-const names = ["SABAhh", "mamacita"];
-const password = ["SabaSaba37", "mamacita777"];
-let name = prompt("name?");
-let pass = prompt("password?");
-for (let i = 0; i < names.length; i++) {
-  if (name === names[i] && pass === password[i]) {
-    alert("u succsessfully loged in");
-  }
-}
+// const names = ["SABAhh", "mamacita"];
+// const password = ["SabaSaba37", "mamacita777"];
+// let name = prompt("name?");
+// let pass = prompt("password?");
+// for (let i = 0; i < names.length; i++) {
+//   if (name === names[i] && pass === password[i]) {
+//     alert("u succsessfully loged in");
+//   }
+// }
