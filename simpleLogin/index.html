@@ -13,27 +13,51 @@
         -apple-system,
         BlinkMacSystemFont,
         Segoe UI sans-serif;
-      background-color: bisque;
+      background-color: rgb(255, 250, 244);
     "
   >
     <div class="container">
       <p id="error-message" class="error-message"></p>
       <form class="login-form" onsubmit="LogIn(event)">
-        <h1 style="margin-left: 0; text-align: center">Login</h1>
+        <h1>Welcome Back</h1>
 
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" />
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your username"
+        />
 
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+        />
 
-        <label for="remember">Remember me</label>
-        <input type="checkbox" id="remember" name="remember" />
-
-        <p>Forgot password?</p>
-        <p>Dont have an account? <span style="color: blue">Sign up</span></p>
+        <div class="options">
+          <label class="remember-me">
+            <input type="checkbox" id="remember" name="remember" />
+            Remember me
+          </label>
+          <a
+            href="#"
+            style="color: #6366f1; text-decoration: none; font-size: 14px"
+            >Forgot password?</a
+          >
+        </div>
 
         <button type="submit" class="button">Login</button>
+
+        <div class="links">
+          Don't have an account?
+          <a
+            href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiv1p7GpYmTAxX6BtsEHXzXJnMQjBB6BAgNEAE&url=https%3A%2F%2Fwww-fallback.instagram.com%2Faccounts%2Fsignup%2Fphone%3Fnext%3D%252Ftaniaof2%252F&usg=AOvVaw1My4xZe23psfGx0giyA18X&opi=89978449"
+            >Sign up</a
+          >
+        </div>
       </form>
     </div>
     <script src="index.js"></script>

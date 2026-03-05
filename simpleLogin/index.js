@@ -5,36 +5,40 @@ const database = [
 ];
 
 function LogIn(event) {
-  // 1. Fix: preventDefault takes no arguments
   event.preventDefault();
 
-  // 2. Get values
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
   const errorMessage = document.getElementById("error-message");
 
   errorMessage.textContent = "";
+  errorMessage.classList.remove("visible");
 
-  // 3. Validation
-  if (username == "") {
-    errorMessage.textContent = "Username is empty";
+  if (username === "") {
+    showError("Username is empty");
     return;
   }
-  if (password == "") {
-    errorMessage.textContent = "Password is empty";
-    return; // 4. Fix: Stop execution if password is empty
+  if (password === "") {
+    showError("Password is empty");
+    return;
   }
 
-  // 5. Fix: Correct logic to find the user in the database
-  const user = database.find(function (e) {
-    return e.username === username && e.password === password;
-  });
+  const user = database.find(
+    (e) => e.username === username && e.password === password,
+  );
 
   if (user) {
-    alert("Login is successful");
+    alert("Login is successful!");
+    document.querySelector("form").reset();
   } else {
-    errorMessage.textContent = "Incorrect username or password";
+    showError("Incorrect username or password");
   }
+}
+
+function showError(msg) {
+  const el = document.getElementById("error-message");
+  el.textContent = msg;
+  el.classList.add("visible");
 }
 //   შეავსეთ ფუნქცია კოდით რომელიც ამოწმებს
 //   იუზერნეიმი და პაროლი რომ არ იყოს ცარიელი
