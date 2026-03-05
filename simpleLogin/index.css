@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column; /* Changed to column for vertical stacking */
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  border: 2px solid gainsboro;
+  border-radius: 13px;
+  background-color: white;
+  width: 300px;
+  margin-left: auto; /* Centers the container horizontally */
+  margin-right: auto;
+  padding: 20px;
+}
+
+button {
+  background-color: blue;
+  color: aliceblue;
+  border: 2px solid blue; /* Fixed border syntax */
+  border-radius: 15px;
+  padding: 10px;
+  /* Removed huge padding that pushed text off screen */
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  min-height: 20px;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body
+    style="
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        Segoe UI sans-serif;
+      background-color: bisque;
+    "
+  >
+    <div class="container">
+      <p id="error-message" class="error-message"></p>
+      <form class="login-form" onsubmit="LogIn(event)">
+        <h1 style="margin-left: 0; text-align: center">Login</h1>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
+
+        <label for="remember">Remember me</label>
+        <input type="checkbox" id="remember" name="remember" />
+
+        <p>Forgot password?</p>
+        <p>Dont have an account? <span style="color: blue">Sign up</span></p>
+
+        <button type="submit" class="button">Login</button>
+      </form>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
