@@ -119,3 +119,19 @@ input[type="password"] {
 .error-message.visible {
   display: block;
 }
+
+.success-message {
+  color: #166534;
+  text-align: center;
+  font-size: 14px;
+  min-height: 20px;
+  margin-bottom: 15px;
+  background-color: #dcfce7;
+  padding: 8px;
+  border-radius: 6px;
+  display: none;
+}
+
+.success-message.visible {
+  display: block;
+}

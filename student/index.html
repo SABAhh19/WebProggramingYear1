@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body
+    style="
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        Segoe UI sans-serif;
+      background-color: rgb(255, 250, 244);
+    "
+  >
+    <div class="container">
+      <p id="error-message" class="error-message"></p>
+      <form class="login-form" onsubmit="grade(event)">
+        <h1>Welcome Back</h1>
+
+        <label for="name">Student Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+        />
+        <label for="mathGrade">Math Grade</label>
+        <input
+          type="number"
+          id="mathGrade"
+          name="mathGrade"
+          placeholder="Enter your Math Grade"
+        />
+        <label for="englishGrade">English Grade</label>
+        <input
+          type="number"
+          id="englishGrade"
+          name="englishGrade"
+          placeholder="Enter your English Grade"
+        />
+        <button type="submit" class="button">
+          Submit
+        </button>
+        <p id="result"></p>
+      </form>
+    </div>
+      </form>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
