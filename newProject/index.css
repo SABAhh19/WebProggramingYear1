@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI sans-serif;
+  background-color: rgb(255, 250, 244);
+}
+
+.nav {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.377);
+}
+
+.logo-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25px;
+}
+
+.shop {
+  background-color: rgb(2, 103, 255);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.MStore {
+  color: rgba(128, 128, 128, 0.884);
+  font-size: 14px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  color: gray;
+}
+
+.nav-links p {
+  color: rgba(128, 128, 128, 0.829);
+  font-size: 14px;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.centerDiv {
+  display: flex;
+}
+
+.half1 {
+  display: flex;
+  justify-content: start;
+  margin-left: 25px;
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+
+.half2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
