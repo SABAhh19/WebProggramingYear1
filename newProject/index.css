@@ -89,6 +89,7 @@ button {
   font-size: 14px;
   border: none;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .half2 {
@@ -104,13 +105,13 @@ button {
   width: 100%;
   max-width: 550px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
 }
 
 .image-area {
   position: relative;
   background-color: #e6e8ec;
   height: 240px;
-  width: 100%;
   border-radius: 15px;
   margin-bottom: 15px;
 }
@@ -119,12 +120,12 @@ button {
   position: absolute;
   top: 15px;
   left: 15px;
-  background-color: #2563eb;
   color: white;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 11px;
   z-index: 10;
+  background-color: royalblue;
 }
 
 .product-name {
@@ -138,9 +139,125 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .price {
   font-size: 16px;
   color: #374151;
+  font-weight: 600;
+}
+
+.products-section {
+  padding: 50px;
+  max-width: 1600px;
+  margin: auto;
+}
+
+.products-header {
+  margin-bottom: 30px;
+}
+
+.products-header h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.products-header p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  background: none;
+  border: 2px solid #e5e7eb;
+  color: #6b7280;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.add-to-cart-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(37, 100, 235, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.footer {
+  background-color: #f8fafc;
+  padding: 60px 50px 40px;
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+}
+
+.footer-left h4 {
+  display: inline;
+  background-color: rgb(2, 103, 255);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-left p {
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.footer-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-column h6 {
+  color: #1f2937;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.footer-column p {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.2s;
 }
