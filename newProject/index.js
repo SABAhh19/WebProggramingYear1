@@ -1,8 +1,10 @@
 import { items } from "./data.js";
 const productsGrid = document.querySelector(".products-grid");
-window.addToCart = function () {
-  console.log("buying new item");
-};
+productsGrid.addEventListener("click", (e) => {
+  if (e.target.classList.contains("add-to-cart-btn")) {
+    console.log("adding to cart");
+  }
+});
 
 for (let i = 0; i < items.length; i++) {
   let badge = "";
@@ -24,16 +26,9 @@ for (let i = 0; i < items.length; i++) {
             <p class="price">${items[i].price}</p>
             <p class="meta">In stock · Free shipping</p>
           </div>
-          <button onclick="addToCart()" class="add-to-cart-btn">Add to cart</button>
+          <button class="add-to-cart-btn">Add to cart</button>
         </div>
       </div>
     </div>
   `;
-
-  const buttonClick=document.createElement("button"){
-    buttonClick.addEventListener("click", ()=>{
-      console.log("adding t cart");
-    })
-  }
-
 }
