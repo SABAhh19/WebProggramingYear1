@@ -1,5 +1,6 @@
 import { items } from "./data.js";
 const productsGrid = document.querySelector(".products-grid");
+
 productsGrid.addEventListener("click", (e) => {
   if (e.target.classList.contains("add-to-cart-btn")) {
     console.log("adding to cart");
