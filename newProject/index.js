@@ -1,8 +1,17 @@
 import { items } from "./data.js";
 const productsGrid = document.querySelector(".products-grid");
+
+window.cart = [];
+
 productsGrid.addEventListener("click", (e) => {
   if (e.target.classList.contains("add-to-cart-btn")) {
-    console.log("added to cart");
+    const i = e.target.getAttribute("data-index");
+    const item = items[i];
+
+    window.cart.push(item);
+
+    console.log("Added to cart:", item);
+    console.log("Current cart:", window.cart);
   }
 });
 
@@ -26,7 +35,7 @@ for (let i = 0; i < items.length; i++) {
             <p class="price">${items[i].price}</p>
             <p class="meta">In stock · Free shipping</p>
           </div>
-          <button class="add-to-cart-btn">Add to cart</button>
+          <button class="add-to-cart-btn" data-index="${i}">Add to cart</button>
         </div>
       </div>
     </div>
