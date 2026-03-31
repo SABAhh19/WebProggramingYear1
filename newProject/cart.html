@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart - Lesson Demo</title>
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="page-title">Your Cart</h1>
+
+      <div class="cart-layout">
+        <section class="card cart-items"></section>
+
+        <aside class="card">
+          <h2 class="summary-title">Order Summary</h2>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span class="subtotal">$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span class="shipping">$10.00</span>
+          </div>
+          <div class="summary-row summary-total">
+            <span>Total</span>
+            <span class="total">$10.00</span>
+          </div>
+          <button class="checkout-btn" type="button">
+            Proceed to Checkout
+          </button>
+        </aside>
+      </div>
+    </div>
+    <script type="module" src="cart.js"></script>
+  </body>
+</html>
