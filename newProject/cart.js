@@ -15,8 +15,10 @@ function displayCart() {
   const cartItemsSection = document.querySelector(".cart-items");
   cartItemsSection.innerHTML = "";
 
-  for (let id in window.cart) {
-    const item = window.cart[id];
+  for (let i = 0; i < cartEntries.length; i++) {
+    const entry = cartEntries[i];
+    const id = entry[0];
+    const item = entry[1];
 
     const itemDiv = document.createElement("div");
     itemDiv.className = "cart-item";
@@ -30,27 +32,26 @@ function displayCart() {
 
     cartItemsSection.appendChild(itemDiv);
   }
-
-  // Add event listeners
-  document.querySelectorAll(".quantity-input").forEach((input) => {
-    input.addEventListener("change", (e) => {
-      const id = e.target.getAttribute("data-id");
-      window.cart[id].quantity = parse(e.target.value);
-      localStorage.setItem("cartItems", JSON.stringify(window.cart));
-      updateSummary();
-    });
-  });
-
-  document.querySelectorAll(".remove-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const id = e.target.getAttribute("data-id");
-      delete window.cart[id];
-      localStorage.setItem("cartItems", JSON.stringify(window.cart));
-      displayCart();
-      updateSummary();
-    });
-  });
 }
+
+document.querySelectorAll(".quantity-input").forEach((input) => {
+  input.addEventListener("change", (e) => {
+    const id = e.target.getAttribute("data-id");
+    window.cart[id].quantity = parse(e.target.value);
+    localStorage.setItem("cartItems", JSON.stringify(window.cart));
+    updateSummary();
+  });
+});
+
+document.querySelectorAll(".remove-btn").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const id = this.dataset.id;
+    delete window.cart[id];
+    localStorage.setItem("cartItems", JSON.stringify(window.cart));
+    displayCart();
+    updateSummary();
+  });
+});
 
 function updateSummary() {
   let subtotal = 0;
