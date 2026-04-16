@@ -74,8 +74,8 @@ const students = [
 ];
 
 const topStudents = students
-  .sort((a, b) => b.score - a.score) // Highest first
-  .filter((s, i) => i < 3) // Top 3 only
-  .map((s) => s.name); // Names
+  .sort((a, b) => b.score - a.score)
+  .filter((s, i) => i < 3)
+  .map((s) => s.name);
 
-console.log(topStudents); // ["Lia", "Gio", "Saba"]
+console.log(topStudents);
