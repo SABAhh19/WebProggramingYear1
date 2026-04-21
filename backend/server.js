@@ -2,8 +2,12 @@ import express from "express";
 
 const app = express();
 
-app.get("/hello", (req, res) => {
-  res.send("hello world");
+const users = ["saba", "vasiko", "niko"];
+
+app.get("/users/:id", (req, res) => {
+  res.send(users[req.params.id]);
 });
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log("app is listening at http://localhost:3000");
+});
