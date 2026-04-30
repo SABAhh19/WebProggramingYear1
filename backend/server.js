@@ -24,3 +24,5 @@ app.get("/products/:id", (req, res) => {
   if (!findProd) return res.sendStatus(404);
   return res.send(findProd);
 });
+
+app.listen(3000);
