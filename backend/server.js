@@ -5,10 +5,10 @@ const app = express();
 app.use(express.json());
 
 const products = [
-  { id: 1, name: "keyboard", price: 120 },
-  { id: 2, name: "monitor", price: 220 },
-  { id: 3, name: "desk", price: 180 },
-  { id: 4, name: "phone", price: 370 },
+  { id: 1, name: "star wars" },
+  { id: 2, name: "smallville" },
+  { id: 3, name: "superman" },
+  { id: 4, name: "flash" },
 ];
 
 app.get("/products", (req, res) => {
@@ -25,4 +25,6 @@ app.get("/products/:id", (req, res) => {
   return res.send(findProd);
 });
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log("listening at http://localhost:3000");
+});
