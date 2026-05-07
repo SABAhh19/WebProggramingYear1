@@ -32,7 +32,7 @@ app.get("/users/:id", (req, res) => {
 });
 
 app.post("/add-user", (req, res) => {
-  console.log(`"adding new user"${req.body}`);
+  console.log(`adding new user ${req.body}`);
   const user = req.body;
 });
 
@@ -51,10 +51,10 @@ app.get("/products/:id", (req, res) => {
 });
 
 app.post("/add-product", (req, res) => {
-  const Nproduct = req.body;
-  products.push(Nproduct);
+  const nProduct = req.body;
+  products.push(nProduct);
   res.send(products);
-  console.log(`added new product ${Nproduct}`);
+  console.log(`added new product ${nProduct}`);
 });
 
 app.post("/login", (req, res) => {
@@ -64,8 +64,40 @@ app.post("/login", (req, res) => {
   if (user && user.pass === pass) {
     res.send("Login successful");
   } else {
-    res.send("Invalid credentials");
+    res.send("Invalid username or password");
   }
+});
+
+app.patch("/products/:id", (req, res) => {
+  const parsedId = parseInt(req.params.id);
+  if (isNaN(parsedId)) {
+    return res.status(400).send("id should be number");
+  }
+
+  let product = products.find((p) => p.id === parsedId);
+  if (!product) {
+    return res.status(404).send("no product on that id");
+  }
+
+  product.price = req.body.price;
+  return res.status(200).send("product discount added");
+});
+
+app.put("/products/:id", (req, res) => {
+  const parsedId = parseInt(req.params.id);
+  if (isNaN(parsedId)) {
+    return res.status(400).send("id should be number");
+  }
+
+  let product = products.find((p) => p.id === parsedId);
+  if (!product) {
+    return res.status(404).send("no product on that id");
+  }
+
+  product.item = req.body.item;
+  product.price = req.body.price;
+
+  return res.status(200).send("product has changed");
 });
 
 app.listen(3000, () => {
