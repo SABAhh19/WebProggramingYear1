@@ -4,27 +4,42 @@ const app = express();
 
 app.use(express.json());
 
-const products = [
-  { id: 1, category: "shoes", name: "Margiela Gats", price: 149 },
-  { id: 2, category: "clothing", name: "Levis jeans", price: 89 },
-  { id: 3, category: "clothing", name: "Zara jacket", price: 119 },
-  { id: 4, category: "shoes", name: "Premiata", price: 239 },
-  { id: 5, category: "clothing", name: "Burberry shirt", price: 169 },
-];
+async function getPosts() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const posts = await res.json();
+  const reducedPosts = posts.slice(0, 5);
+  const postDiv = document.getElementById("saba");
+  reducedPosts.forEach((post) => {
+    const p = document.createElement("p");
+    p.textContent - post.body;
+    postDiv.appendChild(p);
+  });
+}
 
-app.get("/products", (req, res) => {
-  res.send(products);
-});
+getPosts();
 
-app.get("/products/:id", (req, res) => {
-  const parsedId = parseInt(req.params.id);
-  if (isNaN(parsedId)) {
-    return res.status(400).send({ msg: "bad request give good id" });
-  }
-  const findProd = products.find((prod) => prod.id === parsedId);
-  if (!findProd) return res.sendStatus(404);
-  return res.send(findProd);
-});
+// This line is what makes the magic happen
+// const products = [
+//   { id: 1, category: "shoes", name: "Margiela Gats", price: 149 },
+//   { id: 2, category: "clothing", name: "Levis jeans", price: 89 },
+//   { id: 3, category: "clothing", name: "Zara jacket", price: 119 },
+//   { id: 4, category: "shoes", name: "Premiata", price: 239 },
+//   { id: 5, category: "clothing", name: "Burberry shirt", price: 169 },
+// ];
+
+// app.get("/products", (req, res) => {
+//   res.send(products);
+// });
+
+// app.get("/products/:id", (req, res) => {
+//   const parsedId = parseInt(req.params.id);
+//   if (isNaN(parsedId)) {
+//     return res.status(400).send({ msg: "bad request give good id" });
+//   }
+//   const findProd = products.find((prod) => prod.id === parsedId);
+//   if (!findProd) return res.sendStatus(404);
+//   return res.send(findProd);
+// });
 
 // const users = [
 //   { id: 1, username: "saba", pass: "saba123" },
