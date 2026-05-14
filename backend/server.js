@@ -4,19 +4,19 @@ const app = express();
 
 app.use(express.json());
 
-async function getPosts() {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts = await res.json();
-  const reducedPosts = posts.slice(0, 5);
-  const postDiv = document.getElementById("saba");
-  reducedPosts.forEach((post) => {
-    const p = document.createElement("p");
-    p.textContent - post.body;
-    postDiv.appendChild(p);
-  });
-}
+// async function getPosts() {
+//   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+//   const posts = await res.json();
+//   const reducedPosts = posts.slice(0, 5);
+//   const postDiv = document.getElementById("saba");
+//   reducedPosts.forEach((post) => {
+//     const p = document.createElement("p");
+//     p.textContent - post.body;
+//     postDiv.appendChild(p);
+//   });
+// }
 
-getPosts();
+// getPosts();
 
 // This line is what makes the magic happen
 // const products = [
