@@ -1,8 +1,8 @@
-import express from "express";
+// import express from "express";
 
-const app = express();
+// const app = express();
 
-app.use(express.json());
+// app.use(express.json());
 
 // async function getPosts() {
 //   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -137,6 +137,24 @@ app.use(express.json());
 //   return res.status(200).send("product has changed");
 // });
 
-app.listen(3000, () => {
-  console.log("listening at http://localhost:3000");
-});
+class Car {
+  constructor(brand, model, doors, color) {
+    this.brand = brand;
+    this.model = model;
+    this.doors = doors;
+    this.color = color;
+  }
+
+  logCar() {
+    console.log(
+      `This is a ${this.color} ${this.brand} ${this.model} with ${this.doors} doors.`,
+    );
+  }
+}
+const car1 = new Car("Mercedes", "E63", 4, "Black");
+
+car1.logCar();
+
+// app.listen(3000, () => {
+//   console.log("listening at http://localhost:3000");
+// });
