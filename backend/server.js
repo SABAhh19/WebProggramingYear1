@@ -1,8 +1,31 @@
-// import express from "express";
+import express from "express";
+import cors from "cors";
 
-// const app = express();
+const app = express();
 
-// app.use(express.json());
+app.use(express.json());
+app.use(cors({ origin: "http://127.0.0.1:5500" }));
+
+const users = ["zaza", "kazare", "saba"];
+
+app.get("/users", (req, res) => {
+  res.send(users);
+});
+
+const items = [
+  { id: 1, category: "shoes", item: "Margiela Gats", price: "$149.99" },
+  { id: 2, category: "clothing", item: "Levis jeans", price: "$89.99" },
+  { id: 3, category: "clothing", item: "Zara Jacket", price: "$119.99" },
+  { id: 4, category: "shoes", item: "Valentino Girravanni", price: "$159.99" },
+];
+
+app.get("/items", (req, res) => {
+  res.send(items);
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port http://localhost:3000");
+});
 
 // async function getPosts() {
 //   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -137,24 +160,20 @@
 //   return res.status(200).send("product has changed");
 // });
 
-class Car {
-  constructor(brand, model, doors, color) {
-    this.brand = brand;
-    this.model = model;
-    this.doors = doors;
-    this.color = color;
-  }
+// class Car {
+//   constructor(brand, model, doors, color) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.doors = doors;
+//     this.color = color;
+//   }
 
-  logCar() {
-    console.log(
-      `This is a ${this.color} ${this.brand} ${this.model} with ${this.doors} doors.`,
-    );
-  }
-}
-const car1 = new Car("Mercedes", "E63", 4, "Black");
+//   logCar() {
+//     console.log(
+//       `This is a ${this.color} ${this.brand} ${this.model} with ${this.doors} doors.`,
+//     );
+//   }
+// }
+// const car1 = new Car("Mercedes", "E63", 4, "Black");
 
-car1.logCar();
-
-// app.listen(3000, () => {
-//   console.log("listening at http://localhost:3000");
-// });
+// car1.logCar();

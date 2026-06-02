@@ -1,13 +1,37 @@
-import { items } from "./data.js";
 const productsGrid = document.querySelector(".products-grid");
 
 window.cart = {};
+let items = [];
+
+getUsers();
+fetchAndRenderItems();
+async function getUsers() {
+  try {
+    const result = await fetch("http://localhost:3000/users");
+    const data = await result.json();
+    console.log("Users:", data);
+  } catch (error) {
+    console.error("Failed to fetch users ", error);
+  }
+}
+
+async function fetchAndRenderItems() {
+  try {
+    const result = await fetch("http://localhost:3000/items");
+    items = await result.json();
+
+    for (let i = 0; i < items.length; i++) {
+      createProductCard(items[i], i);
+    }
+  } catch (error) {
+    console.error("Failed to fetch items ", error);
+  }
+}
 
 productsGrid.addEventListener("click", (e) => {
   if (e.target.className === "add-to-cart-btn") {
     const i = e.target.getAttribute("data-index");
     const item = items[i];
-
     addProductToCart(item);
 
     console.log("Added to cart:", item);
@@ -78,8 +102,4 @@ function createProductCard(product, i) {
 
   productCard.appendChild(productInfo);
   productsGrid.appendChild(productCard);
-}
-
-for (let i = 0; i < items.length; i++) {
-  createProductCard(items[i], i);
 }

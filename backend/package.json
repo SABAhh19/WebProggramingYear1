@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/SABAhh19/WebProggramingYear1#readme",
   "dependencies": {
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "nodemon": "^3.1.14"
   }
