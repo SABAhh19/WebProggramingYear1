@@ -1,7 +1,7 @@
 import express from "express";
-import { Prod } from "../Models/User";
+import { Prod } from "../Models/User.js";
 
-const router = express.router();
+const router = express.Router();
 
 router.post("/addProd", async (req, res) => {
   try {
@@ -15,10 +15,6 @@ router.post("/addProd", async (req, res) => {
   } catch (err) {
     res.status(400).send(err.message);
   }
-});
-
-router.listen(PORT, () => {
-  console.log("Server is running on port http://localhost:8080");
 });
 
 export default router;

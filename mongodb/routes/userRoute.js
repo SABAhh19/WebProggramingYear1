@@ -1,7 +1,7 @@
 import express from "express";
-import { User } from "../Models/User";
+import { User } from "../Models/User.js";
 
-const router = express.router();
+const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
@@ -17,20 +17,6 @@ router.get("/get-by-id", async (req, res) => {
   } catch (error) {}
 });
 
-router.post("/addPro", async (req, res) => {
-  try {
-    const prod = await new Prod({
-      name: "margiela",
-      category: "shoes",
-      price: 300,
-    });
-    await prod.save();
-    res.send("success");
-  } catch (err) {
-    res.status(400).send(err.message);
-  }
-});
-
 router.post("/addUser", async (req, res) => {
   const user = await new User({
     username: "gia",
@@ -38,10 +24,6 @@ router.post("/addUser", async (req, res) => {
   });
   user.save();
   res.send("success");
-});
-
-router.listen(PORT, () => {
-  console.log("Server is running on port http://localhost:8080");
 });
 
 export default router;
