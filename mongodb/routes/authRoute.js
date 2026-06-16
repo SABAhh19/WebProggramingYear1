@@ -1,5 +1,6 @@
 import { Router } from "express";
 import jwt from "jsonwebtoken";
+import { User } from "../Models/User.js";
 
 const router = Router();
 
@@ -20,6 +21,19 @@ router.post("/login", (req, res) => {
     expiresIn: "1h",
   });
   res.json({ token });
+});
+
+router.post("/register", async (req, res) => {
+  try {
+    const { username, password, displayName, role } = req.body;
+
+    const user = new User({ username, password, displayName, role });
+    await user.save();
+
+    res.status(201).send("added succsessfully");
+  } catch (err) {
+    res.status(400).send("err in database");
+  }
 });
 
 export default router;
