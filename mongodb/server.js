@@ -2,10 +2,11 @@ import mongoose from "mongoose";
 import cors from "cors";
 import express from "express";
 import "./db.js";
+import "dotenv/config";
 import productRoute from "./routes/productRoute.js";
 import userRoute from "./routes/userRoute.js";
 import authRoute from "./routes/authRoute.js";
-import authMiddleware from "./routes/authMiddle.js";
+// import authMiddleware from "./routes/authMiddle.js";
 
 const app = express();
 const PORT = 8080;
