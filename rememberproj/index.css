@@ -27,25 +27,26 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: 25px;
 }
 
 .shop {
   background-color: rgb(2, 103, 255);
   color: white;
-  border-radius: 15px;
   padding: 5px 15px;
+  border-radius: 15px;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.Mstore {
+.MStore {
   color: rgba(128, 128, 128, 0.884);
   font-size: 14px;
 }
 
 .nav-links {
-  gap: 30px;
   display: flex;
+  gap: 30px;
   color: gray;
 }
 
@@ -59,7 +60,7 @@ button {
 
 .main-container {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 100px;
   padding: 50px;
   max-width: 1600px;
@@ -94,6 +95,16 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 25px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
 }
 
 .image-area {
@@ -155,4 +166,31 @@ button {
 .products-header p {
   color: #666;
   margin-bottom: 25px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  background: none;
+  border: 2px solid #e5e7eb;
+  color: #6b7280;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
